@@ -73,13 +73,19 @@ class LinkedList {
   /** getAt(idx): get val at idx. */
 
   getAt(idx) {
-
+    if(idx >= this.length || idx < 0) {
+      throw new Error("Invalid index.");
+    }
+    return this._get(idx).val;
   }
 
   /** setAt(idx, val): set val at idx to val */
 
   setAt(idx, val) {
-
+    if(idx >= this.length || idx < 0) {
+      throw new Error("Invalid index.");
+    }
+    this._get(idx).val = val;
   }
 
   /** insertAt(idx, val): add node w/val before idx. */
